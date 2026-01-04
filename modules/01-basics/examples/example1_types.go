@@ -65,11 +65,11 @@ func Constants() {
 
 	// iota - automatic incrementing constant
 	const (
-		Monday = iota // 0
-		Tuesday       // 1
-		Wednesday     // 2
-		Thursday      // 3
-		Friday        // 4
+		Monday    = iota // 0
+		Tuesday          // 1
+		Wednesday        // 2
+		Thursday         // 3
+		Friday           // 4
 	)
 
 	fmt.Printf("Days - Monday: %d, Friday: %d\n", Monday, Friday)
@@ -179,8 +179,8 @@ func Slices() {
 	fmt.Printf("Nil slice: %v, len: %d, cap: %d\n", numbers, len(numbers), cap(numbers))
 
 	// Create slice with make
-	scores := make([]int, 5)       // length 5, capacity 5
-	buffer := make([]int, 0, 10)   // length 0, capacity 10
+	scores := make([]int, 5)     // length 5, capacity 5
+	buffer := make([]int, 0, 10) // length 0, capacity 10
 	fmt.Printf("Scores: %v, Buffer: %v\n", scores, buffer)
 
 	// Slice literal
