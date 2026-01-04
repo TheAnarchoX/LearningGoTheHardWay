@@ -16,6 +16,14 @@ fmt: ## Format all Go code
 	go fmt ./...
 	gofmt -s -w .
 
+check-fmt: ## Check if code is formatted (non-destructive)
+	@echo "Checking code formatting..."
+	@if [ -n "$$(gofmt -l .)" ]; then \
+		echo "The following files are not formatted:"; \
+		gofmt -l .; \
+		exit 1; \
+	fi
+
 lint: ## Run linters
 	@echo "Running linters..."
 	golangci-lint run ./...
@@ -43,6 +51,6 @@ clean: ## Clean build artifacts
 	@echo "Cleaning..."
 	rm -rf bin/ coverage.out coverage.html
 
-verify: fmt lint test ## Run all verification steps
+verify: check-fmt lint test ## Run all verification steps (non-destructive)
 
 all: install-tools verify build ## Run complete build pipeline

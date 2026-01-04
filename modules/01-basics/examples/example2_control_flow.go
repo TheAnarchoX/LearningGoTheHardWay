@@ -135,7 +135,7 @@ func SwitchStatements() {
 	}
 
 	// Switch without condition (like if-else chain)
-	temperature := 25
+	temperature := 18
 	switch {
 	case temperature < 0:
 		fmt.Println("Freezing")

@@ -60,13 +60,13 @@ func FindMax(numbers []int) int {
 }
 
 // CountVowels should count the number of vowels (a, e, i, o, u) in a string.
-// BUG: Missing vowels in the check.
+// BUG: Missing vowels in the check and not handling case-insensitivity.
 func CountVowels(s string) int {
 	count := 0
 	for _, char := range s {
-		lower := string(char)
-		// BUG: Missing 'i', 'o', 'u'
-		if lower == "a" || lower == "e" {
+		// BUG: Not converting to lowercase - case-sensitive comparison
+		// BUG: Missing 'i', 'o', 'u' vowels
+		if char == 'a' || char == 'e' {
 			count++
 		}
 	}
