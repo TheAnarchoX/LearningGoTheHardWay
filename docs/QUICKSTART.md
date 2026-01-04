@@ -13,8 +13,10 @@ brew install go
 
 **Linux:**
 ```bash
-wget https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.21.0.linux-amd64.tar.gz
+# Download the latest version from https://go.dev/dl/
+# Replace VERSION with the latest (e.g., 1.21.5)
+wget https://go.dev/dl/goVERSION.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf goVERSION.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 ```
 

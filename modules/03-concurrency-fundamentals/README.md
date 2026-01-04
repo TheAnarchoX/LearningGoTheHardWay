@@ -273,6 +273,7 @@ for w := 0; w < 3; w++ {
 
 ### Pipeline
 ```go
+// Pipeline example with complete usage
 func generator(nums ...int) <-chan int {
     out := make(chan int)
     go func() {
@@ -295,7 +296,13 @@ func square(in <-chan int) <-chan int {
     return out
 }
 
-// Use: square(generator(1, 2, 3, 4))
+// Use: Compose and consume the pipeline
+func usePipeline() {
+    // Chain stages: generator -> square
+    for result := range square(generator(1, 2, 3, 4)) {
+        fmt.Println(result)  // Prints: 1, 4, 9, 16
+    }
+}
 ```
 
 ## 📚 Additional Resources
